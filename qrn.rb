@@ -11,7 +11,7 @@ class Qrn < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/winebarrel/qrn/releases/download/v2.0.0/qrn_2.0.0_darwin_amd64.tar.gz"
-      sha256 "256bff99f784a4d6f5affb5770a608110feb02b90e174ce0f693ac2265bb67be"
+      sha256 "6e3bfd22cc258d1e7ed0de0adfde2791da65cbe107417832e7d525d27a7df73d"
 
       def install
         bin.install 'qrn'
@@ -19,7 +19,7 @@ class Qrn < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/winebarrel/qrn/releases/download/v2.0.0/qrn_2.0.0_darwin_arm64.tar.gz"
-      sha256 "96be22ad9f30bbab01923f2afdbffad46f3047db5a6ef2ecb04fa7720e0859aa"
+      sha256 "238a8be9d7835b1ad4fac86ed676cc062211e9c00679ff00334b327da668411e"
 
       def install
         bin.install 'qrn'
@@ -28,17 +28,17 @@ class Qrn < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/winebarrel/qrn/releases/download/v2.0.0/qrn_2.0.0_linux_amd64.tar.gz"
-      sha256 "3a93d5fca1aac42ddf362b26b3e1b236b1b45ce95a8eebd35d1bad935d7098fe"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/winebarrel/qrn/releases/download/v2.0.0/qrn_2.0.0_linux_arm64.tar.gz"
+      sha256 "87db4511daa5021307abb8e5210155ad70ec9c459cc6d8058d0858e3307d2b81"
 
       def install
         bin.install 'qrn'
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/winebarrel/qrn/releases/download/v2.0.0/qrn_2.0.0_linux_arm64.tar.gz"
-      sha256 "67a7cf29a9e150f23e7b4099e7864647ff6382271527b80ac20923e6bd008116"
+    if Hardware::CPU.intel?
+      url "https://github.com/winebarrel/qrn/releases/download/v2.0.0/qrn_2.0.0_linux_amd64.tar.gz"
+      sha256 "4061fc868e9d325d5efc4227663ba5c8c70e41b6e19f2a9870538384292c697a"
 
       def install
         bin.install 'qrn'

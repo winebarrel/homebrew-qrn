@@ -5,21 +5,21 @@
 class Qrn < Formula
   desc "qrn is a database load testing tool."
   homepage "https://github.com/winebarrel/qrn"
-  version "2.0.1"
+  version "2.0.2"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/winebarrel/qrn/releases/download/v2.0.1/qrn_2.0.1_darwin_amd64.tar.gz"
-      sha256 "40fb420902356d35b2cb80b80b5a9872ceea744c4141c2a34b899ea1c8eedef9"
+    if Hardware::CPU.arm?
+      url "https://github.com/winebarrel/qrn/releases/download/v2.0.2/qrn_2.0.2_darwin_arm64.tar.gz"
+      sha256 "f9866209a8866868247827df35bd7071f90ffb1df33ce28779ca4daeb861d0c3"
 
       def install
         bin.install 'qrn'
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/winebarrel/qrn/releases/download/v2.0.1/qrn_2.0.1_darwin_arm64.tar.gz"
-      sha256 "11b12fc2eb802c404d5c16c8dc8609c02de79860040ec2753553fd2b0aba291f"
+    if Hardware::CPU.intel?
+      url "https://github.com/winebarrel/qrn/releases/download/v2.0.2/qrn_2.0.2_darwin_amd64.tar.gz"
+      sha256 "6919b66ef76336b916cf715f9121941f6a9844a27878a44c8dccf74988ab5d08"
 
       def install
         bin.install 'qrn'
@@ -29,16 +29,16 @@ class Qrn < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/winebarrel/qrn/releases/download/v2.0.1/qrn_2.0.1_linux_amd64.tar.gz"
-      sha256 "59de0db57d6fb0b97f3843ab12a8e653b30dbdde4d722b002c14ff713a06ec7a"
+      url "https://github.com/winebarrel/qrn/releases/download/v2.0.2/qrn_2.0.2_linux_amd64.tar.gz"
+      sha256 "97c150fef48cebac0fac92361e0e8a302a431f67ee4aa706b60a6ba12523801a"
 
       def install
         bin.install 'qrn'
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/winebarrel/qrn/releases/download/v2.0.1/qrn_2.0.1_linux_arm64.tar.gz"
-      sha256 "2c717702ea74be4c9465f9fc525ef76bc7afc9582711351d01ccf763d1a8eafd"
+      url "https://github.com/winebarrel/qrn/releases/download/v2.0.2/qrn_2.0.2_linux_arm64.tar.gz"
+      sha256 "4238d88fdecb21251a1a6987a11eb67a4c1073cac97d296fe026fb16629b0c97"
 
       def install
         bin.install 'qrn'

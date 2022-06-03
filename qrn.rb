@@ -5,21 +5,21 @@
 class Qrn < Formula
   desc "qrn is a database load testing tool."
   homepage "https://github.com/winebarrel/qrn"
-  version "2.0.0"
+  version "2.0.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/winebarrel/qrn/releases/download/v2.0.0/qrn_2.0.0_darwin_amd64.tar.gz"
-      sha256 "6e3bfd22cc258d1e7ed0de0adfde2791da65cbe107417832e7d525d27a7df73d"
+      url "https://github.com/winebarrel/qrn/releases/download/v2.0.1/qrn_2.0.1_darwin_amd64.tar.gz"
+      sha256 "40fb420902356d35b2cb80b80b5a9872ceea744c4141c2a34b899ea1c8eedef9"
 
       def install
         bin.install 'qrn'
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/winebarrel/qrn/releases/download/v2.0.0/qrn_2.0.0_darwin_arm64.tar.gz"
-      sha256 "238a8be9d7835b1ad4fac86ed676cc062211e9c00679ff00334b327da668411e"
+      url "https://github.com/winebarrel/qrn/releases/download/v2.0.1/qrn_2.0.1_darwin_arm64.tar.gz"
+      sha256 "11b12fc2eb802c404d5c16c8dc8609c02de79860040ec2753553fd2b0aba291f"
 
       def install
         bin.install 'qrn'
@@ -28,17 +28,17 @@ class Qrn < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/winebarrel/qrn/releases/download/v2.0.0/qrn_2.0.0_linux_arm64.tar.gz"
-      sha256 "87db4511daa5021307abb8e5210155ad70ec9c459cc6d8058d0858e3307d2b81"
+    if Hardware::CPU.intel?
+      url "https://github.com/winebarrel/qrn/releases/download/v2.0.1/qrn_2.0.1_linux_amd64.tar.gz"
+      sha256 "59de0db57d6fb0b97f3843ab12a8e653b30dbdde4d722b002c14ff713a06ec7a"
 
       def install
         bin.install 'qrn'
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/winebarrel/qrn/releases/download/v2.0.0/qrn_2.0.0_linux_amd64.tar.gz"
-      sha256 "4061fc868e9d325d5efc4227663ba5c8c70e41b6e19f2a9870538384292c697a"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/winebarrel/qrn/releases/download/v2.0.1/qrn_2.0.1_linux_arm64.tar.gz"
+      sha256 "2c717702ea74be4c9465f9fc525ef76bc7afc9582711351d01ccf763d1a8eafd"
 
       def install
         bin.install 'qrn'
